@@ -1,0 +1,89 @@
+:root{
+    --white: #FFF4E6;
+    --gold: #AE7520;
+    --black: #232220;
+}
+
+@font-face {
+    font-family: firstFont;
+    src: url("Fonts/Rancho-Regular.ttf");
+}
+
+body{font-family: firstFont}
+
+#gridContainer{
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'header header header'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'contact contact contact';
+}
+
+#headerDiv{
+    grid-area: header;
+    text-align: center;
+    font-size: 170%;
+    }
+
+#menuDiv{
+    grid-area: menu;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    margin: 7px;
+    padding: 17px;
+    border: var(--gold) solid 3px;
+    min-width: 70%;
+    font-size: 130%;
+    }
+
+#mainDiv{
+    gri-area: main;
+    margin: 7px;
+    padding: 7px;
+    }
+
+#profilePic{
+    border-radius: 17%;
+    padding: 3px;
+    border: 1px solid var(--gold);
+}
+
+#contactDiv{
+       grid-area: contact;
+       text-align: center;}
+
+#contactDiv img{ width: 1.7%;}
+
+h1, .year{ color: var(--gold);}
+
+a {color: var(--white);}
+
+.menuList a:hover{ color: var(--gold);}
+
+
+
+@media only screen and (max-width: 700px){
+    /* change the grid arrangement*/
+    #gridContainer{
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'header header header'
+    'menu menu menu'
+    'menu menu menu'
+    'main main main'
+    'main main main'
+    'main main main'
+    'contact contact contact';
+    }
+
+    /* replace the menu list <br> in '|' */
+    #menuDiv br{ content: '';}
+    #menuDiv br:after { content: '  |   ';}
+}
