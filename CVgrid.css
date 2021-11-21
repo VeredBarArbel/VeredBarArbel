@@ -1,4 +1,4 @@
-:root{
+:root {
     --white: #FFF4E6;
     --gold: #AE7520;
     --black: #232220;
@@ -9,9 +9,13 @@
     src: url("Fonts/Rancho-Regular.ttf");
 }
 
-body{font-family: firstFont}
+body {
+    font-family: firstFont;
+    max-height: 100vh;
+    max-width: 95%;
+}
 
-#gridContainer{
+#gridContainer {
     display: grid;
     grid-template-areas:
     'header header header'
@@ -24,13 +28,48 @@ body{font-family: firstFont}
     'contact contact contact';
 }
 
-#headerDiv{
+#headerDiv {
     grid-area: header;
     text-align: center;
     font-size: 170%;
-    }
+    /*position: sticky;
+    top: 0px; */
+    max-height: 17vh;
+    background-color: white;
+}
 
-#menuDiv{
+.typingEffect {
+    /*animation*/
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: medium solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 4s steps(37, end),
+    blink-caret 0.75s step-end 3.5;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: var(--gold);
+    }
+}
+
+#menuDiv {
     grid-area: menu;
     text-align: center;
     background-color: var(--black);
@@ -40,39 +79,60 @@ body{font-family: firstFont}
     border: var(--gold) solid 3px;
     min-width: 70%;
     font-size: 130%;
-    }
+}
 
-#mainDiv{
+#mainDiv {
     gri-area: main;
     margin: 7px;
     padding: 7px;
-    }
+}
 
-#profilePic{
+#profilePic {
     border-radius: 17%;
     padding: 3px;
     border: 1px solid var(--gold);
 }
 
-#contactDiv{
-       grid-area: contact;
-       text-align: center;}
+#contactDiv {
+    grid-area: contact;
+    text-align: center;
+    display: flex;
+    max-height: 17vh;
+    margin: 3px;
+    padding: 7px;
+}
 
-#contactDiv img{ width: 1.7%;}
+#contactDiv img {
+    width: 2.7%;
+}
 
-h1, .year{ color: var(--gold);}
+h1, .year {
+    color: var(--gold);
+}
 
-a {color: var(--white);}
+a {
+    color: var(--white);
+}
 
-.menuList a:hover{ color: var(--gold);}
+.menuList {
+    position: sticky;
+    top: 17vh;
+    display: flex;
+    align-content: space-evenly;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.menuList a:hover {
+    color: var(--gold);
+}
 
 
-
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
     /* change the grid arrangement*/
-    #gridContainer{
-    display: grid;
-    grid-template-areas:
+    #gridContainer {
+        display: grid;
+        grid-template-areas:
     'header header header'
     'header header header'
     'menu menu menu'
@@ -83,7 +143,23 @@ a {color: var(--white);}
     'contact contact contact';
     }
 
+    .menuList {
+        flex-flow: row wrap;
+    }
+
+    #menuDiv {
+        position: sticky;
+        top: 0vh;
+    }
+
     /* replace the menu list <br> in '|' */
-    #menuDiv br{ content: '';}
-    #menuDiv br:after { content: '  |   ';}
+    #menuDiv br {
+        content: '';
+    }
+
+    #menuDiv br:after {
+        content: '  |   ';
+        color: var(--gold);
+    }
+
 }
