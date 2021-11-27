@@ -98,12 +98,12 @@ body {
     text-align: center;
     display: flex;
     max-height: 17vh;
-    margin: 3px;
+    margin: 3%;
     padding: 7px;
 }
 
 #contactDiv img {
-    width: 2.7%;
+    width: 5.3%;
 }
 
 h1, .year {
@@ -123,7 +123,7 @@ a {
     flex-flow: column wrap;
 }
 
-.menuList a:hover {
+a:hover {
     color: var(--gold);
 }
 
@@ -162,4 +162,22 @@ a {
         color: var(--gold);
     }
 
+}
+
+/*CV2*/
+.center {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+#goBack {
+    font-size: 200%;
+    background-color: var(--black);
+    margin: 7px;
+    padding: 13px;
+    border: var(--gold) solid 3px;
+    font-size: 130%;
 }
